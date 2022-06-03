@@ -10,7 +10,7 @@ export const HomePageWrapper = styled.div`
     align-items: center;
 ` 
 
-export const FormWrapper = styled.div`
+export const FormWrapper = styled.form`
     display: grid;
     grid-template-rows: repeat(3, 1fr);
     justify-content: center;

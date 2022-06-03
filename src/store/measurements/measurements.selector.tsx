@@ -1,0 +1,1 @@
+export const selectMeasurements = (state:any) => state.measurements.state

@@ -1,36 +1,65 @@
-import { useState } from "react"
+import React, { useState } from "react"
 import { Button } from "../../Components/button/button.component"
 import { Header } from "../../Components/header/header.component"
 import { TextInput } from "../../Components/textInput/index.component"
 import { FormWrapper, HomePageWrapper } from "./home.styles"
+import { useNavigate } from "react-router-dom"
+import { useDispatch } from "react-redux"
+import { adjustMeasurements } from "../../store/measurements/measurements.action"
+import { useSelector } from "react-redux"
+import { selectMeasurements } from "../../store/measurements/measurements.selector"
 
+const INITIAL_STATE = {
+    braco:"",
+    cintura:""
+}
 
 export const HomePage = () => {
-    const INITIAL_STATE = {
-        braco:23,
-        cintura:20,
-    }
-   const [medidas, setMedidas] = useState(INITIAL_STATE)
+const [measurements, setMeasurements] = useState(INITIAL_STATE)
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+    const selectMeasuresLog = useSelector(selectMeasurements)
+   const handleBracoChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+        setMeasurements({
+            ...measurements,
+            braco:e.target.value
+        })
+   }
 
-   console.log(medidas)
+   const handleCinturaChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+        setMeasurements({
+            ...measurements,
+            cintura: e.target.value
+        })
+    }
+
+    const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        //Não se esquecer de fazer o post dos dados coletados
+        //navigate('/yourShop')
+        console.log(measurements)
+        console.log(selectMeasuresLog.braco)
+        dispatch(adjustMeasurements(measurements))
+    }
+
     return( 
         <HomePageWrapper>
         <Header/>
-            <FormWrapper>
+            <FormWrapper onSubmit={handleSubmit}>
             <h1>Coloque suas medidas</h1>
             <TextInput 
                 maxLength={undefined} 
-                value={""} 
-                type={""} 
+                value={measurements.braco} 
+                type={"text"} 
                 label={"braço"} 
-                onChange={() => null}
+                onChange={handleBracoChange}
             />
             <TextInput 
                 maxLength={undefined} 
-                value={""} 
-                type={""} 
+                value={measurements.cintura} 
+                type={"text"} 
                 label={"cintura"} 
-                onChange={() => null}
+                onChange={handleCinturaChange}
             />
             <Button children={"Submit"}/>
             </FormWrapper>
