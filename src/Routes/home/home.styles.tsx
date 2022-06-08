@@ -1,20 +1,18 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-export const HomePageWrapper = styled.div`
+
+export const MainPageWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #000000;
     height: 100vh;
     width: 100vw;
     min-height: 100%;
-    min-width:100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-` 
+    min-width: 100%;
+`
 
-export const FormWrapper = styled.form`
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 30px;
+export const ImageHomePage = styled.img`
+    width: 15rem;
 `

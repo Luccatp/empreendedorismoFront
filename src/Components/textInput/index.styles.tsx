@@ -6,12 +6,13 @@ interface Props {
 
 export const Group = styled.div`
   position: relative;
+  margin-bottom: 15px;
 `
 
 export const Input = styled.input`
     background: none;
     background-color: inherit;
-    color: #2d2c3e;
+    color: white;
     font-size: 18px;
     padding: 10px 10px 10px 5px;
     display: flex;
@@ -28,7 +29,7 @@ export const Input = styled.input`
     &:focus + label {
       top: -14px;
       font-size: 12px;
-      color: black;
+      color: white;
     }
 
     @media screen and (min-width: 1000px) {
@@ -37,7 +38,7 @@ export const Input = styled.input`
 `
 
 export const InputLabel = styled.label`
-    color: #2d2c3e;
+    color: white;
     font-size: 16px;
     font-weight: normal;
     position: absolute;
@@ -50,7 +51,7 @@ export const InputLabel = styled.label`
       css`
         top:-14px;
         font-size: 12px;
-        color: black;
+        color: white;
       `:
       css``}
       
