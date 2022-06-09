@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux"
+import { useNavigate } from "react-router-dom"
 import { Button } from "../../Components/button/button.component"
 import { selectMeasurements } from "../../store/measurements/measurements.selector"
 
@@ -7,6 +8,11 @@ import { ConfirmationTitle, ConfirmationWrapper, MeasurementConfirmation, Measur
 
 export const ConfirmationPage = () => {
     const measurements = useSelector(selectMeasurements)
+    const navigate = useNavigate()
+
+    const handleOnClick = () => {
+        navigate("/yourShop")
+    }
 
     return(
         <ConfirmationWrapper>
@@ -27,7 +33,7 @@ export const ConfirmationPage = () => {
             <MeasurementConfirmation>{measurements.calcanhar}</MeasurementConfirmation>
             <MeasurementTitles>Cintura para Joelho</MeasurementTitles>
             <MeasurementConfirmation>{measurements.cinturaPJoelho}</MeasurementConfirmation>
-            <Button children="GO TO YOUR SHOP"/>
+            <Button children="GO TO YOUR SHOP" onClick={handleOnClick}/>
         </ConfirmationWrapper>
     )
 }

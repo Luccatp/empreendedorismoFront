@@ -1,9 +1,10 @@
 import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
-import { Button } from "../../Components/button/button.component"
+import ImgBackToMeasurement from "../../utils/images/backToMeasurementImg.jpg"
 import { Header } from "../../Components/header/header.component"
 import { selectMeasurements } from "../../store/measurements/measurements.selector"
-import { BackToMeasurements } from "./yourShop.styles"
+import { BackToMeasurements, BackToMeasurementsImg, YourShopWrapper } from "./yourShop.styles"
+import { ItemsCard } from "../../Components/ItemsCard/ItemsCard.component"
 
 export const YourShopPage = () => {
     const navigate = useNavigate()
@@ -15,9 +16,12 @@ export const YourShopPage = () => {
         navigate('/measurements')
     }
     return(
-        <div>
+        <YourShopWrapper>
             <Header/>
-            <BackToMeasurements onClick={handleBackMeasurements}>-</BackToMeasurements>
-        </div>
+            <BackToMeasurements onClick={handleBackMeasurements}>
+                <BackToMeasurementsImg src={ImgBackToMeasurement} alt="Click here to go back to the measurements"/>
+            </BackToMeasurements>
+            <ItemsCard/>
+        </YourShopWrapper>
     )
 }
