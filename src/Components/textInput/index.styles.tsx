@@ -13,10 +13,10 @@ export const Input = styled.input`
     background: none;
     background-color: inherit;
     color: white;
-    font-size: 18px;
+    font-size: 30px;
     padding: 10px 10px 10px 5px;
     display: flex;
-    width: 12rem;
+    width: 24rem;
     border: none;
     border-radius: 0;
     border-bottom: 1px solid grey;
@@ -45,7 +45,7 @@ export const Input = styled.input`
 
 export const InputLabel = styled.label`
     color: white;
-    font-size: 16px;
+    font-size: 32px;
     font-weight: normal;
     position: absolute;
     pointer-events: none;
@@ -56,7 +56,7 @@ export const InputLabel = styled.label`
     ${(p:Props) => p.shrink ?
       css`
         top:-14px;
-        font-size: 12px;
+        font-size: 25px;
         color: white;
       `:
       css``}

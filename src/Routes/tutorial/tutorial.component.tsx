@@ -13,9 +13,9 @@ export const TutorialPage = () => {
 
     return(
         <TutorialWrapper>
-            <TutorialTitle>Esse é o tutorial de como tirar todas as medidas do seu corpo</TutorialTitle>
+            <TutorialTitle>Aqui temos um tutorial sobre como tirar as medidas necessarias</TutorialTitle>
             <TutorialImage src={tutorialImage} alt='measurements'/>
-            <Button children={'ENTENDIDO'} onClick={handleOnClick}/>
+            <Button children={'APRENDI!'} onClick={handleOnClick}/>
         </TutorialWrapper>
     )
 }

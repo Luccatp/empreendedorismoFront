@@ -6,8 +6,11 @@ export const ConfirmationWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: white;
-    margin-bottom: 50px;
+    background-color: #b261be;
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    min-width: 100vw;
 `
 
 export const ConfirmationTitle = styled.h1`

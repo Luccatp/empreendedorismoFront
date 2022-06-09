@@ -17,10 +17,21 @@ export const TutorialImage = styled.img`
     width: 100%;
     height: 20rem;
     background-color: black;
+
+    @media screen and (min-width: 600px) {
+        width: 50%;
+        height: 60%;
+        font-size: 2rem;
+    }
 `
 
 export const TutorialTitle = styled.h2`
     color: white;
     text-align: center;
-    border: 1px solid white;
+    text-decoration: underline;
+    padding: 10px;
+
+    @media screen and (min-width: 600px) {
+        font-size: 3rem;
+    }
 `

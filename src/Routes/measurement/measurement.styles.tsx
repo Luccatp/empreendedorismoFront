@@ -27,4 +27,5 @@ export const InputWrapper = styled.div`
 
 export const MeasurementsHeader = styled.h2`
     color:white;
+    margin-bottom: 3rem;
 `

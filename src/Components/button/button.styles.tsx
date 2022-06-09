@@ -6,9 +6,16 @@ export const BaseButton = styled.button`
     border-radius: 10px;
     background-color: white;
     box-shadow: #9943a7 0px 1.5px;
+    margin-bottom: 10px;
 
     :hover {
         cursor: pointer;
+    }
+
+    @media screen and (min-width: 600px) {
+        height: 3rem;
+        width: 7rem;
+        font-size: 1.3rem;
     }
 `
 
@@ -31,5 +38,11 @@ export const HomePageButton = styled.button`
 
     :hover {
         cursor: pointer;
+    }
+
+    @media screen and (min-width: 600px) {
+        height: 3rem;
+        width: 7rem;
+        font-size: 2rem;
     }
 `

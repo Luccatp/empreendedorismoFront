@@ -23,9 +23,18 @@ export const BackToMeasurements = styled.div`
     :hover {
         cursor: pointer;
     }
+
+    @media screen and (min-width: 600px) {
+        height: 6rem;
+        width: 6rem;
+    }
 `
 
 export const BackToMeasurementsImg = styled.img`
     height: 2rem;
     border-radius: 20px;
+
+    @media screen and (min-width: 600px) {
+        height: 6rem;
+    }
 `
