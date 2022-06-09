@@ -28,7 +28,7 @@ export const Input = styled.input`
 
     &:focus + label {
       top: -14px;
-      font-size: 12px;
+      font-size: 22px;
       color: white;
     }
 
@@ -39,7 +39,7 @@ export const Input = styled.input`
     }
 
     @media screen and (min-width: 1000px) {
-      font-size: 30px;
+      font-size: 22px;
       width: 25rem;
     }
 `
@@ -55,7 +55,7 @@ export const InputLabel = styled.label`
     transition: 300ms ease all;
 
     @media screen and (min-width: 600px) {
-      font-size: 32px;
+      font-size: 22px;
     }
    
     ${(p:Props) => p.shrink ?
@@ -63,10 +63,6 @@ export const InputLabel = styled.label`
         top:-14px;
         font-size: 12px;
         color: white;
-
-        @media screen and (min-width: 600px){
-          font-size: 35px;
-        }
       `:
       css``}
       
