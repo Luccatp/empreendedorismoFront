@@ -1,3 +1,4 @@
+import { LogoImg } from "../logoImg/logo.component"
 import { HeaderContainer } from "./header.styles"
 
 
@@ -5,7 +6,7 @@ export const Header = () => {
 
     return(
         <HeaderContainer>
-            <h1>Nome da Marca</h1>
+            <LogoImg/>
         </HeaderContainer>
     )
 }

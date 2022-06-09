@@ -12,7 +12,3 @@ export const MainPageWrapper = styled.div`
     min-height: 100%;
     min-width: 100%;
 `
-
-export const ImageHomePage = styled.img`
-    width: 15rem;
-`

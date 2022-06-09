@@ -7,7 +7,7 @@ export const HeaderContainer = styled.div`
     display: flex;
     justify-content: center;
     margin-bottom: 25px;
-    background-color: #eeeeee;
+    background-color: #000000;
 `
 
 export const BrandName = styled.h1`

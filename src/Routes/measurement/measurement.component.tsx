@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Button } from "../../Components/button/button.component"
 import { Header } from "../../Components/header/header.component"
 import { useNavigate } from "react-router-dom"
@@ -21,10 +21,18 @@ const INITIAL_STATE = {
 }
 
 export const MeasurementPage = () => {
-const [measurements, setMeasurements] = useState(INITIAL_STATE)
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    const selectMeasuresLog = useSelector(selectMeasurements)
+    
+    const measurementSelector = useSelector(selectMeasurements)
+
+    const [measurements, setMeasurements] = useState(INITIAL_STATE)
+
+    useEffect(() => {
+        if(measurementSelector !== undefined) {
+            setMeasurements(measurementSelector)
+        }
+    }, [measurementSelector])
 
    const handleOmbroChange = (e:React.ChangeEvent<HTMLInputElement>) => {
         setMeasurements({
@@ -40,10 +48,45 @@ const [measurements, setMeasurements] = useState(INITIAL_STATE)
         })
     }
 
-    const handleHipChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+    const handleCinturaChange = (e:React.ChangeEvent<HTMLInputElement>) => {
         setMeasurements({
             ...measurements,
-            hip: e.target.value
+            cintura: e.target.value
+        })
+    }
+
+    const handleQuadrilChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+        setMeasurements({
+            ...measurements,
+            quadril: e.target.value
+        })
+    }
+
+    const handleQuadrilAltoChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+        setMeasurements({
+            ...measurements,
+            quadrilAlto: e.target.value
+        })
+    }
+
+    const handleCinturaPJoelhoChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+        setMeasurements({
+            ...measurements,
+            cinturaPJoelho: e.target.value
+        })
+    }
+    
+    const handleJoelhoChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+        setMeasurements({
+            ...measurements,
+            joelho: e.target.value
+        })
+    }
+
+    const handleCalcanharChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+        setMeasurements({
+            ...measurements,
+            calcanhar: e.target.value
         })
     }
 
@@ -61,25 +104,60 @@ const [measurements, setMeasurements] = useState(INITIAL_STATE)
             <FormWrapper onSubmit={handleSubmit}>
             <MeasurementsHeader>Coloque suas medidas</MeasurementsHeader>
                 <TextInput 
-                    maxLength={undefined} 
-                    value={measurements.shoulder} 
-                    type={"text"} 
+                    maxLength={2} 
+                    value={measurements.ombro} 
+                    type={"number"} 
                     label={"ombro a ombro"} 
-                    onChange={handleShoulderChange}
+                    onChange={handleOmbroChange}
                 />
                 <TextInput 
-                    maxLength={undefined} 
-                    value={measurements.waist} 
-                    type={"text"} 
+                    maxLength={2} 
+                    value={measurements.cintura} 
+                    type={"number"} 
                     label={"cintura"} 
-                    onChange={handleWaistChange}
+                    onChange={handleCinturaChange}
                 />
                 <TextInput 
-                    maxLength={undefined} 
-                    value={measurements.hip} 
-                    type={"text"} 
+                    maxLength={2} 
+                    value={measurements.quadril} 
+                    type={"number"} 
                     label={"quadril"} 
-                    onChange={handleHipChange}
+                    onChange={handleQuadrilChange}
+                />
+                <TextInput 
+                    maxLength={2} 
+                    value={measurements.joelho} 
+                    type={"number"} 
+                    label={"joelho"} 
+                    onChange={handleJoelhoChange}
+                />
+                <TextInput 
+                    maxLength={2} 
+                    value={measurements.peito} 
+                    type={"number"} 
+                    label={"peito"} 
+                    onChange={handlePeitoChange}
+                />
+                <TextInput 
+                    maxLength={2} 
+                    value={measurements.quadrilAlto} 
+                    type={"number"} 
+                    label={"quadrilAlto"} 
+                    onChange={handleQuadrilAltoChange}
+                />
+                <TextInput 
+                    maxLength={2} 
+                    value={measurements.calcanhar} 
+                    type={"number"} 
+                    label={"calcanhar"} 
+                    onChange={handleCalcanharChange}
+                />
+                <TextInput 
+                    maxLength={2} 
+                    value={measurements.cinturaPJoelho} 
+                    type={"number"} 
+                    label={"cintura p/ joelho"} 
+                    onChange={handleCinturaPJoelhoChange}
                 />
             <Button children={"Submit"}/>
             </FormWrapper>

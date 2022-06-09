@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { Button } from '../../Components/button/button.component'
-import HomeLogo from './../../utils/images/MEASURE_1.png'
-import { ImageHomePage, MainPageWrapper } from './home.styles'
+import { LogoImg } from '../../Components/logoImg/logo.component'
+import { MainPageWrapper } from './home.styles'
 
 
 export const HomePage = () => {
@@ -13,8 +13,8 @@ export const HomePage = () => {
 
     return(
         <MainPageWrapper>
-        <ImageHomePage src={HomeLogo} alt='aa'/>
-        <Button children={'ENTRAR'} onClick={handleOnClick} buttonType={'home'}/>
+            <LogoImg/>
+            <Button children={'ENTRAR'} onClick={handleOnClick} buttonType={'home'}/>
         </MainPageWrapper>
     )
 }

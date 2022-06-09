@@ -32,6 +32,12 @@ export const Input = styled.input`
       color: white;
     }
 
+    ::-webkit-outer-spin-button, 
+    ::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin:0;
+    }
+
     @media screen and (min-width: 1000px) {
       width: 25rem;
     }

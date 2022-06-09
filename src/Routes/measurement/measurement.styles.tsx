@@ -12,12 +12,13 @@ export const MeasurementsWrapper = styled.div`
 ` 
 
 export const FormWrapper = styled.form`
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 30px;
+    overflow-y: auto;
 `
 
 export const InputWrapper = styled.div`
