@@ -53,6 +53,10 @@ export const InputLabel = styled.label`
     left: 5px;
     top: 10px;
     transition: 300ms ease all;
+
+    @media screen and (min-width: 600px) {
+      font-size: 32px;
+    }
    
     ${(p:Props) => p.shrink ?
       css`
@@ -61,7 +65,7 @@ export const InputLabel = styled.label`
         color: white;
 
         @media screen and (min-width: 600px){
-          font-size: 25px;
+          font-size: 35px;
         }
       `:
       css``}
