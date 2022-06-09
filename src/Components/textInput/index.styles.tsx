@@ -13,10 +13,10 @@ export const Input = styled.input`
     background: none;
     background-color: inherit;
     color: white;
-    font-size: 30px;
+    font-size: 18px;
     padding: 10px 10px 10px 5px;
     display: flex;
-    width: 24rem;
+    width: 12rem;
     border: none;
     border-radius: 0;
     border-bottom: 1px solid grey;
@@ -39,13 +39,14 @@ export const Input = styled.input`
     }
 
     @media screen and (min-width: 1000px) {
+      font-size: 30px;
       width: 25rem;
     }
 `
 
 export const InputLabel = styled.label`
     color: white;
-    font-size: 32px;
+    font-size: 16px;
     font-weight: normal;
     position: absolute;
     pointer-events: none;
@@ -56,8 +57,12 @@ export const InputLabel = styled.label`
     ${(p:Props) => p.shrink ?
       css`
         top:-14px;
-        font-size: 25px;
+        font-size: 12px;
         color: white;
+
+        @media screen and (min-width: 600px){
+          font-size: 25px;
+        }
       `:
       css``}
       
