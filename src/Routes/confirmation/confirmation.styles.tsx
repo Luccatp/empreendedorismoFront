@@ -7,8 +7,18 @@ export const ConfirmationWrapper = styled.div`
     justify-content: center;
     align-items: center;
     background-color: white;
+    margin-bottom: 50px;
 `
 
 export const ConfirmationTitle = styled.h1`
     
+`
+
+export const MeasurementTitles = styled.h2`
+    text-decoration: underline;
+`
+
+export const MeasurementConfirmation = styled.p`
+    font-weight: bold;
+    margin-bottom: 30px;
 `

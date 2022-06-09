@@ -95,7 +95,7 @@ export const MeasurementPage = () => {
         //Não se esquecer de fazer o post dos dados coletados
         console.log(measurements)
         dispatch(adjustMeasurements(measurements))
-        navigate('/yourShop')
+        navigate('/confirmation')
     }
 
     return( 
@@ -142,7 +142,7 @@ export const MeasurementPage = () => {
                     maxLength={2} 
                     value={measurements.quadrilAlto} 
                     type={"number"} 
-                    label={"quadrilAlto"} 
+                    label={"quadril Alto"} 
                     onChange={handleQuadrilAltoChange}
                 />
                 <TextInput 
